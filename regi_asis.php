@@ -47,7 +47,7 @@ if ($fecha_dia != "Saturday") {
         $salida_hora_min_mañ= strtotime($item["hora_salida_maniana"] ); 
         
         $entrada_tar = date_create($item["hora_entrada_tarde"]);
-        $entrada_hora_min_tar= strtotime($item["hora_entrada_tarde"] ); 
+        $entrada_hora_min_tar= strtotime($item["hora_entrada_tarde"."+ $tolerancia min" ] ); 
         
         $salida_tar = date_create($item["hora_salida_tarde"]);
         $salida_hora_min_tar= strtotime($item["hora_salida_tarde"] );
@@ -107,7 +107,7 @@ if ($fecha_dia != "Saturday") {
 
 }else{
     
-    $consulta=  "SELECT usuarios.nombres,usuarios.agencia,hora_entrada_maniana_s,hora_salida_maniana_s 
+    $consulta=  "SELECT usuarios.nombres,usuarios.agencia,hora_entrada_maniana_s,hora_salida_maniana_s ,tolerancia 
                 FROM horarios 
                 INNER JOIN horario_asignados ON horarios.id_horario = horario_asignados.id_horario 
                 INNER JOIN usuarios ON horario_asignados.dni = usuarios.dni 
@@ -117,7 +117,7 @@ if ($fecha_dia != "Saturday") {
     foreach ($rconsulta as $item) {
 
         $entrada_mañ = date_create($item["hora_entrada_maniana_s"]);
-        $entrada_hora_min_mañ= strtotime($item["hora_entrada_maniana_s"] ); 
+        $entrada_hora_min_mañ= strtotime($item["hora_entrada_maniana_s"."+ $tolerancia min" ] ); 
         
         $salida_mañ = date_create($item["hora_salida_maniana_s"]);
         $salida_hora_min_mañ= strtotime($item["hora_salida_maniana_s"] ); 
