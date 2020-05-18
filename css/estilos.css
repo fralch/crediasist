@@ -1,0 +1,147 @@
+html, body{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    margin: 0;
+}
+#backg{
+    /*background-image: url(/img/background.svg);*/
+    background-image: url(http://credipymesolucion.com.pe/test/img/background.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-y: 150px;
+
+    height:100%;
+}
+#logo{
+    position: relative;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 20%;
+}
+aside img{
+    display: none;
+}
+
+section{
+   position: relative; 
+   
+
+}
+article #candado{
+    position: relative;
+    width: 20%;
+    margin-top: 20%;
+    margin-left: 40%;
+    
+}
+section article h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    margin: 0;
+    color: #868e96;
+    text-align: center;
+    
+}
+section article #dni{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    width: 50%;
+    height: 2em;
+    margin-top: 5%;
+    margin-left: 25%;
+    border: 0;
+    background-color: #eee;
+}
+section article #btnIngresar{
+    position: relative;
+    background-color: #85BB26;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 5%;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section article p{
+    position: relative;
+    text-align: center;
+    font-size: 2.5em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color:#495057;
+}
+
+
+@media (min-width: 700px) {
+    #logo{
+        position: relative;
+        width: 15%;
+        margin-top: 2%;
+        margin-left: 5%;
+    }
+    aside{
+       
+        margin-left: 10%;
+     
+    }
+    aside img{
+        display: block;
+        position: relative;
+        width: 40%;
+        float: left;
+        margin-top: 10%;
+        
+    }
+    section{
+        position: relative;
+        float: right;
+        width: 50%;
+    }
+    section article #candado{
+        position: relative;
+        width: 16%;
+        margin-top: 5%;
+        margin-left: 42%;
+    }
+   
+    section article h2{
+        font-size: 2.5em;
+        margin-top: 5%;    
+    }
+    section article #dni{
+        width: 40%;
+        height: 4em;
+        margin-left: 30%;
+        background-color: #eee;
+    }
+    section article #btnIngresar{
+        font-weight: bold;
+        font-size: 1.8em;
+        
+    }
+    #backg{
+        
+        background-size: 50%;
+        background-position-y: 100px;
+        height:100%;
+    }
+    section article p{
+        margin-top: 2%;
+    }
+    
+}
+
+
+@media (min-width: 850px) {
+    section article p{
+        margin-top: 10%;
+        font-size: 3.3em;
+    }
+    
+}

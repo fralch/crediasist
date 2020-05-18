@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credipyme Solución</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/sweetalert2.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/sweetalert2.js"></script>
+    
+</head>
+<body>
+
+<header>
+    <img src="img/logo.svg" alt="" id="logo">
+</header>
+<div id="backg">
+    <aside>
+        <img src="img/imagen.svg" alt="">
+    </aside>
+<section>
+    <article>
+        <img src="img/candado.svg" alt="" id="candado">
+        <h2>CONTROL <br>
+        DE ASISTENCIA</h2>
+        <form action="regi_asis.php" method="post">
+            <input type="text" name="dni" id="dni" placeholder="Ingresar DNI">
+            <br>
+            <input type="txt" name="hora" id="hora">
+            <input type="text" name ="minuto" id="minuto">
+            <br>
+            <input type="submit" value="INGRESAR" id="btnIngresar">
+        </form>
+     
+        <div id="reloj">
+           
+        </div>
+    </article>
+    
+</section>
+</div>
+<script src="js/reloj.js"></script>
+<script src="js/validacion.js"></script>
+</body>
+</html>
