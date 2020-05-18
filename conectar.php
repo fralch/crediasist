@@ -6,7 +6,7 @@ function conectar(){
     // $server="67.205.125.21";
     // $db="credipy_sistema";
     $user="root";
-    $pass="siempree08";
+    $pass="";
     $server="localhost";
     $db="credipy_sistema";
 

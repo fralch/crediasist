@@ -19,7 +19,7 @@ $sistema_operativo = getPlatform($user_agent);
 $hora = (int) $_POST['hora'];
 $min = (int) $_POST['minuto'];
 
-$fecha_dc=date_create("2020-04-27 ".$hora.":".$min.":00");
+$fecha_dc=date_create("2020-05-18 ".$hora.":".$min.":00");
 $fechaActual =  date_format($fecha_dc, "Y/m/d H:i:s"); 
 $fecha_dia =  date_format($fecha_dc, "l");
 
@@ -31,17 +31,17 @@ if ($fecha_dia != "Saturday") {
 
     
     $consulta=  "SELECT usuarios.nombres,usuarios.agencia,hora_entrada_maniana,hora_entrada_tarde, 
-                hora_salida_maniana, hora_salida_tarde 
+                hora_salida_maniana, hora_salida_tarde ,tolerancia 
                 FROM horarios INNER JOIN horario_asignados ON horarios.id_horario = horario_asignados.id_horario 
                 INNER JOIN usuarios ON horario_asignados.dni = usuarios.dni 
                 WHERE usuarios.dni='$dni'";
     $rconsulta=mysqli_query($con,$consulta);
 
     foreach ($rconsulta as $item) {
-
+        $tolerancia = $item["tolerancia"];
 
         $entrada_mañ = date_create($item["hora_entrada_maniana"]);
-        $entrada_hora_min_mañ= strtotime($item["hora_entrada_maniana"] ); 
+        $entrada_hora_min_mañ= strtotime($item["hora_entrada_maniana"]."+ $tolerancia min" ); 
         
         $salida_mañ = date_create($item["hora_salida_maniana"]);
         $salida_hora_min_mañ= strtotime($item["hora_salida_maniana"] ); 
