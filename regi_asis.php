@@ -19,7 +19,7 @@ $sistema_operativo = getPlatform($user_agent);
 $hora = (int) $_POST['hora'];
 $min = (int) $_POST['minuto'];
 
-$fecha_dc=date_create("2020-05-18 ".$hora.":".$min.":00");
+$fecha_dc=date_create("2020-05-28".$hora.":".$min.":00");
 $fechaActual =  date_format($fecha_dc, "Y/m/d H:i:s");
 $fecha_dia =  date_format($fecha_dc, "l");
 
@@ -64,11 +64,12 @@ if ($fecha_dia != "Saturday") {
             if ($fecha_actual_hora_min>$entrada_hora_min_mañ) {
                 $tarde= date_diff($fecha_dc, $entrada_mañ);
                 $tarde = $tarde->format('%i');
+                $tarde = $tarde -2;
 
                 $insertar_tardanza= "INSERT INTO tardanzas( minutos, fecha, dni) VALUES ($tarde,'$fechaActual',$dni)";
                 $insertando_tardanza=mysqli_query($con,$insertar_tardanza);
             }
-            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres);
+            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres."&dni=".$dni);
             exit();
         }
 
@@ -76,7 +77,7 @@ if ($fecha_dia != "Saturday") {
         if ($fecha_actual_hora_min>$entrada_hora_min_mañ and  $fecha_actual_hora_min< $entrada_hora_min_tar) {
             $insertar="insert into entrada_salidas (fechahora,tipo,dni) values ('$fechaActual','salida_mañana','$dni')";
             $insertando=mysqli_query($con,$insertar);
-            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres);
+            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres."&dni=".$dni);
             exit();
         }
 
@@ -88,11 +89,12 @@ if ($fecha_dia != "Saturday") {
             if ($fecha_actual_hora_min>$entrada_hora_min_tar) {
                 $tarde= date_diff($fecha_dc, $entrada_tar);
                 $tarde = $tarde->format('%i');
+                $tarde = $tarde -2;
 
                 $insertar_tardanza= "INSERT INTO tardanzas( minutos, fecha, dni) VALUES ($tarde,'$fechaActual',$dni)";
                 $insertando_tardanza=mysqli_query($con,$insertar_tardanza);
             }
-            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres);
+            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres."&dni=".$dni);
             exit();
         }
 
@@ -100,7 +102,7 @@ if ($fecha_dia != "Saturday") {
         if ($fecha_actual_hora_min>$salida_hora_min_tar) {
             $insertar="insert into entrada_salidas (fechahora,tipo,dni) values ('$fechaActual','salida_tarde','$dni')";
             $insertando=mysqli_query($con,$insertar);
-            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres);
+            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres."&dni=".$dni);
             exit();
         }
     }
@@ -136,11 +138,12 @@ if ($fecha_dia != "Saturday") {
             if ($fecha_actual_hora_min>$entrada_hora_min_mañ) {
                 $tarde= date_diff($fecha_dc, $entrada_mañ);
                 $tarde = $tarde->format('%i');
+                $tarde = $tarde -2;
 
                 $insertar_tardanza= "INSERT INTO tardanzas( minutos, fecha, dni) VALUES ($tarde,'$fechaActual',$dni)";
                 $insertando_tardanza=mysqli_query($con,$insertar_tardanza);
             }
-            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres);
+            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres."&dni=".$dni);
             exit();
         }
 
@@ -148,7 +151,7 @@ if ($fecha_dia != "Saturday") {
         if ( $fecha_actual_hora_min> $salida_hora_min_mañ) {
             $insertar="insert into entrada_salidas (fechahora,tipo,dni) values ('$fechaActual','salida_mañana','$dni')";
             $insertando=mysqli_query($con,$insertar);
-            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres);
+            header("Location: controlasistencia.php?agencia=" . $agencia."&nombres=".$nombres."&dni=".$dni);
             exit();
         }
 

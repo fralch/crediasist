@@ -22,7 +22,7 @@ function reloj(){
 
 
 
-    horaImprimible = "<strong>"+hora + ":" + minuto +"</strong>"+ ":" + segundo
+    horaImprimible = "<strong style='color:#244B98;'>"+hora + ":" + minuto +"</strong>"+ ":" + segundo
     document.getElementById("reloj").innerHTML = "<p>"+ horaImprimible +"</p>"
 
     setTimeout("reloj()",1000)

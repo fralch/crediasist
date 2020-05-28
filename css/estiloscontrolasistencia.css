@@ -81,7 +81,7 @@ section article p{
     height: 40%;
     margin-left: 15%;
     background-color: #868E96;
-  }
+}
 #ubicacion p{
     display: none;
 }
@@ -94,9 +94,7 @@ section article p{
         margin-left: 5%;
     }
     aside{
-       
         margin-left: 10%;
-     
     }
     aside img{
         display: block;
@@ -114,7 +112,7 @@ section article p{
     section article #user{
         position: relative;
         width: 16%;
-        margin-top: 5%;
+        margin-top: 0%;
         margin-left: 42%;
     }
    
@@ -145,19 +143,29 @@ section article p{
     #map{
         display: none;
     }
+
     #reloj p{
         margin-bottom: 0.5em;
         margin-top: 0.5em;
         color:#244B98;
     }
     #ubicacion p{
-
+        margin-top: 0;
         display: block;
         position: relative;
         text-align: center;
         font-size: 2em;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
         color: rgba(0, 0, 0, 0.64);
+    }
+    article #formulario{
+        
+        width: 50%;
+        margin-left: 25%;
+    }
+
+    #enviartemperatura{
+        margin-top: 1em;
     }
 }
 
